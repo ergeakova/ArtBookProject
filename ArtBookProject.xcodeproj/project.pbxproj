@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C0946BCF2819810600C920CC /* DetailsVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0946BCE2819810600C920CC /* DetailsVc.swift */; };
 		C0A59E182818E47B00284119 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A59E172818E47B00284119 /* AppDelegate.swift */; };
 		C0A59E1A2818E47B00284119 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A59E192818E47B00284119 /* SceneDelegate.swift */; };
 		C0A59E1C2818E47B00284119 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A59E1B2818E47B00284119 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C0946BCE2819810600C920CC /* DetailsVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsVc.swift; sourceTree = "<group>"; };
 		C0A59E142818E47B00284119 /* ArtBookProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArtBookProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0A59E172818E47B00284119 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0A59E192818E47B00284119 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				C0A59E172818E47B00284119 /* AppDelegate.swift */,
 				C0A59E192818E47B00284119 /* SceneDelegate.swift */,
 				C0A59E1B2818E47B00284119 /* ViewController.swift */,
+				C0946BCE2819810600C920CC /* DetailsVc.swift */,
 				C0A59E1D2818E47B00284119 /* Main.storyboard */,
 				C0A59E232818E48000284119 /* Assets.xcassets */,
 				C0A59E252818E48000284119 /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0946BCF2819810600C920CC /* DetailsVc.swift in Sources */,
 				C0A59E222818E47B00284119 /* ArtBookProject.xcdatamodeld in Sources */,
 				C0A59E1C2818E47B00284119 /* ViewController.swift in Sources */,
 				C0A59E182818E47B00284119 /* AppDelegate.swift in Sources */,
