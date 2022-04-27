@@ -6,13 +6,14 @@
 //
 
 import UIKit
+import CoreData
 
 class DetailsVc: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var lblName: UITextField!
-    @IBOutlet weak var lblArtist: UITextField!
-    @IBOutlet weak var lblYear: UITextField!
+    @IBOutlet weak var txtName: UITextField!
+    @IBOutlet weak var txtArtist: UITextField!
+    @IBOutlet weak var txtYear: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +45,28 @@ class DetailsVc: UIViewController, UIImagePickerControllerDelegate, UINavigation
     }
     
     @IBAction func imageSave(_ sender: Any) {
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        let context = appDelegate!.persistentContainer.viewContext
+        let newPainting = NSEntityDescription.insertNewObject(forEntityName: "Paintings", into: context)
+        
+        //Attributes
+        newPainting.setValue(UUID(), forKey: "id")
+        newPainting.setValue(txtName.text!, forKey: "name")
+        newPainting.setValue(txtArtist.text!, forKey: "artist")
+        if let year = Int(txtYear.text!){
+            newPainting.setValue(year, forKey: "year")
+        }
+        let data = imageView.image!.jpegData(compressionQuality: 0.5)
+        newPainting.setValue(data, forKey: "image")
+        
+        
+        do{
+            try context.save()
+            print("success")
+        } catch{
+            print("error")
+        }
+        
         
     }
 }

@@ -106,9 +106,9 @@
                     <navigationItem key="navigationItem" id="cmQ-qE-tvZ"/>
                     <connections>
                         <outlet property="imageView" destination="pwJ-5S-GZM" id="kd2-ff-x3I"/>
-                        <outlet property="lblArtist" destination="S8P-Ge-WDD" id="S5Y-6O-gJG"/>
-                        <outlet property="lblName" destination="qhD-f9-KLr" id="DSi-9L-7nk"/>
-                        <outlet property="lblYear" destination="Bob-aF-hvN" id="hIg-gC-kk8"/>
+                        <outlet property="txtArtist" destination="S8P-Ge-WDD" id="Uje-28-7Qq"/>
+                        <outlet property="txtName" destination="qhD-f9-KLr" id="jpO-ra-ZBo"/>
+                        <outlet property="txtYear" destination="Bob-aF-hvN" id="Avb-Tj-Kga"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lpW-xz-PKs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
