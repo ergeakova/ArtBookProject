@@ -48,7 +48,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pwJ-5S-GZM">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addimage" translatesAutoresizingMaskIntoConstraints="NO" id="pwJ-5S-GZM">
                                 <rect key="frame" x="54" y="123" width="306" height="289"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="289" id="4AU-54-31H"/>
@@ -135,6 +135,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="addimage" width="840" height="859"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

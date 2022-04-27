@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailsVc: UIViewController {
+class DetailsVc: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var lblName: UITextField!
@@ -17,9 +17,26 @@ class DetailsVc: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //hide Keyboard
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeybord))
-      
         view.addGestureRecognizer(gestureRecognizer)
+        
+        //Add image
+        imageView.isUserInteractionEnabled = true
+        let imageTabRecognizer = UITapGestureRecognizer(target: self, action: #selector(selectImage))
+        imageView.addGestureRecognizer(imageTabRecognizer)
+    }
+    @objc func selectImage(){
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.sourceType = .photoLibrary
+        picker.allowsEditing = true
+        present(picker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        imageView.image = info[.editedImage] as? UIImage
+        self.dismiss(animated: true)
     }
     
     @objc func hideKeybord(){
