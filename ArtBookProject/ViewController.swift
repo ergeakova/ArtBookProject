@@ -20,10 +20,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         navigationController?.navigationBar.topItem?.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(addButtonClicked))
         tableView.dataSource = self
         tableView.delegate = self
-        getdata()
     }
     
-    func getdata() {
+    override func viewWillAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: #selector(getdata), name: NSNotification.Name(rawValue: "newData"), object: nil)
+    }
+    
+    @objc func getdata() {
+        nameArray.removeAll()
+        idArray.removeAll()
+        
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         let context = appDelegate?.persistentContainer.viewContext
         
@@ -45,10 +51,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }catch{
             print("error")
         }
-        
     }
-    
-    
     
     @objc func addButtonClicked() {
         performSegue(withIdentifier: "toDetailsVc", sender: nil)
