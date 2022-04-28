@@ -15,8 +15,21 @@ class DetailsVc: UIViewController, UIImagePickerControllerDelegate, UINavigation
     @IBOutlet weak var txtArtist: UITextField!
     @IBOutlet weak var txtYear: UITextField!
     
+    var chosenPainting = ""
+    var chosenPaintingId = UUID()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if chosenPainting != "" {
+    
+        }
+        else {
+            txtName.text = ""
+            txtArtist.text = ""
+            txtYear.text = ""
+            imageView.image = UIImage(named: "addimage")
+        }
         
         //hide Keyboard
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeybord))

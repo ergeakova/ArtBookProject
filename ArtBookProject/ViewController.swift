@@ -13,6 +13,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var tableView: UITableView!
     var nameArray = [String]()
     var idArray = [UUID]()
+    var selectedPainting = ""
+    var selectedPaintingID = UUID()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +22,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         navigationController?.navigationBar.topItem?.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(addButtonClicked))
         tableView.dataSource = self
         tableView.delegate = self
+        getdata()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,6 +57,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     @objc func addButtonClicked() {
+        selectedPainting = ""
+        
         performSegue(withIdentifier: "toDetailsVc", sender: nil)
     }
     
@@ -65,5 +70,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cell = UITableViewCell()
         cell.textLabel?.text = nameArray[indexPath.row]
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetailsVc" {
+            let destinationVC = segue.destination as! DetailsVc
+            destinationVC.chosenPainting = selectedPainting
+            destinationVC.chosenPaintingId = selectedPaintingID
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedPainting = nameArray[indexPath.row]
+        selectedPaintingID = idArray[indexPath.row]
+        performSegue(withIdentifier: "toDetailsVc", sender: nil)
     }
 }
