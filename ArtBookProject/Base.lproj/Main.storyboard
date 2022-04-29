@@ -106,6 +106,7 @@
                     <navigationItem key="navigationItem" id="cmQ-qE-tvZ"/>
                     <connections>
                         <outlet property="imageView" destination="pwJ-5S-GZM" id="kd2-ff-x3I"/>
+                        <outlet property="saveButton" destination="IDb-Lz-doe" id="LjT-07-asz"/>
                         <outlet property="txtArtist" destination="S8P-Ge-WDD" id="Uje-28-7Qq"/>
                         <outlet property="txtName" destination="qhD-f9-KLr" id="jpO-ra-ZBo"/>
                         <outlet property="txtYear" destination="Bob-aF-hvN" id="Avb-Tj-Kga"/>
